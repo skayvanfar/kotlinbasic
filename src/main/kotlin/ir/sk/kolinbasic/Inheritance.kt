@@ -12,11 +12,20 @@ fun main() {
     myObject.doSomething()
 }
 
-open class Shape
+open class Shape {
+    open val vertexCount: Int = 0
 
-// inheritance
+    open fun draw() {
+
+    }
+}
+
+// override
 class NewRectangle(val height: Double, val length: Double): Shape() {
     val perimeter = (height + length) * 2
+    override val vertexCount = 4
+
+    override fun draw() { /*...*/ }
 }
 
 // abstraction
