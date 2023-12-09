@@ -18,4 +18,18 @@ fun main() {
 
 class Rectangle(val height: Double, val length: Double) {
     val perimeter = (height + length) * 2
+
+}
+
+// add more constructor
+class Person(val name: String) {
+
+    init {
+        println("Init block")
+    }
+
+    val children: MutableList<Person> = mutableListOf()
+    constructor(name: String, parent: Person) : this(name) {
+        parent.children.add(this)
+    }
 }
